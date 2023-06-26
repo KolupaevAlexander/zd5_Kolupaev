@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.MainPage">
+    <TabbedPage.Resources>
+        <StyleSheet Source="/Styles.css" />
+    </TabbedPage.Resources>
+    <ContentPage Title="Кредитный калькулятор">
+
+        <StackLayout VerticalOptions="Center">
+
+            <Label x:Name="helloUser"/>
+            <Label Text="Сумма кредита:"
+                   VerticalOptions="Start"
+                   />
+
+            <Entry x:Name="creditSum"
+                   VerticalOptions="Start"
+                   />
+
+            <Label Text="Срок (месяцев):"
+                   VerticalOptions="Start"
+                   />
+
+            <Entry x:Name="mounthCount"
+                   VerticalOptions="Start"
+                   />
+
+            <Label Text="Вид платежа:" 
+                   VerticalOptions="Start"
+                   />
+
+            <Picker x:Name="typeOfPayment"
+                    VerticalOptions="Center"
+                    Title="Выберите тип"
+                    >
+                <Picker.Items>
+                    <x:String>Аннуитетный</x:String>
+                    <x:String>Дифференцированный</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Процентная ставка:"
+                   VerticalOptions="Start"
+                   />
+
+            <Slider x:Name="percentRate"
+                    VerticalOptions="Start"
+                    Maximum="100"
+                    Minimum="1"
+                    ValueChanged="percentRate_ValueChanged"
+                    />
+
+            <Label x:Name="percent"
+                   Text="0%"
+                   HorizontalOptions="Center"
+                   />
+
+            <Label Text="Ежемесячный платеж:"
+                   VerticalOptions="Start"
+                   />
+
+            <Label x:Name="monthPayment"
+                   Text="..."
+                   VerticalOptions="Start"
+                   />
+
+            <Label Text="Общая сумма:"
+                   VerticalOptions="Start"
+                   />
+
+            <Label x:Name="allSum"
+                   Text="..."
+                   VerticalOptions="Start"
+                   />
+
+            <Label Text="Переплата:"
+                   VerticalOptions="Start"
+                   />
+
+            <Label x:Name="overPayment"
+                   Text="..."
+                   VerticalOptions="Start"
+                   />
+
+            <Button Text="Рассчитать"
+                    HorizontalOptions="Center" 
+                    Clicked="CalculateButton_Clicked"
+                    />
+        </StackLayout>
+
+
+    </ContentPage>
+
+    <ContentPage Title="Курсы валют">
+
+        <Grid VerticalOptions="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Центробанк РФ:" 
+                   Grid.Column="0" 
+                   Grid.Row="0"
+                   VerticalOptions="Start"
+                   Grid.ColumnSpan="2"/>
+
+            <Label Text="USD" 
+                   Grid.Column="0" 
+                   Grid.Row="1"
+                   VerticalOptions="Start"
+                   Grid.ColumnSpan="1"
+                   />
+            
+            <Label Text="80.00" 
+                   Grid.Column="1" 
+                   Grid.Row="1"
+                   VerticalOptions="Start"
+                   />
+
+            <Label Text="EUR" 
+                   Grid.Column="0" 
+                   Grid.Row="2"
+                   VerticalOptions="Start"
+                   />
+            
+            <Label Text="86.00" 
+                   Grid.Column="1" 
+                   Grid.Row="2"
+                   VerticalOptions="Start"
+                   />
+
+            <Label Text="Текущая дата:" 
+                   Grid.Column="2" 
+                   Grid.Row="0"
+                   VerticalOptions="Start"
+                   />
+
+            <DatePicker x:Name="datePicker"
+                        Grid.Column="2" 
+                        Grid.Row="1"
+                        VerticalOptions="Start"
+                        Grid.RowSpan="2" />
+
+        </Grid>
+
+    </ContentPage>
+
+</TabbedPage>
